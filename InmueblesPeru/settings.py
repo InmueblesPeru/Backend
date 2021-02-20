@@ -50,6 +50,8 @@ LOCAL_APPS = [
     # local apps
     'users.apps.UsersConfig',
     'properties.apps.PropertiesConfig',
+    'locations.apps.LocationsConfig',
+    'negotiations.apps.NegotiationsConfig',
     'api.apps.ApiConfig',
     
 ]
