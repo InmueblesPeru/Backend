@@ -1,0 +1,1 @@
+from .negotiations import Negotation
