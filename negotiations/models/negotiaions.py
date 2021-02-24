@@ -17,11 +17,15 @@ class Negotiation(models.Model):
     id_user = models.ForeignKey(User, on_delete=models.CASCADE)
     id_property = models.ForeignKey(Property, on_delete=models.CASCADE)
 
-    Class Status(models.IntegerChoices):
-        '''Status Choice'''
+    # Negotiations choices
+    NO_NEGOTIATION = 0
+    OPEN_NEGOTIATION = 1
+    CLOSE_NEGOTIATION = 2
+    
+    STATUS_CHOICE = [
+        (NO_NEGOTIATION, 'No Negotiation'),
+        (OPEN_NEGOTIATION, 'Open Negotiation'),
+        (CLOSE_NEGOTIATION, 'Close Negotiation'),    
+    ]
 
-        NO_NEGOTIATION = 0
-        OPEN_NEGOTIATION = 1
-        CLOSE_NEGOTIATION = 2
-
-    status = models.IntegerField(choices=Status.choices)
+    status = models.CharField(max_length=50, choices=STATUS_CHOICE, default=NO_NEGOTIATION,)

@@ -1,1 +1,1 @@
-from .negotiations import Negotation
+from .negotiations import Negotiation
