@@ -10,6 +10,7 @@ from django.core.validators import RegexValidator
 # Utils
 from utils.models import DateModels
 
+
 class Profile (AbstractUser, DateModels):
     """Profile model
     
@@ -24,7 +25,8 @@ class Profile (AbstractUser, DateModels):
     first_name = models.CharField(max_length=20, blank=False)
     last_name = models.CharField(max_length=20, blank=False)
     phone_number = models.CharField(validators=[phone_regex], max_length=17)
-    type_user = models.BooleanField(default=0)
+    
+    
 
     email = models.EmailField(
         'email address',
@@ -33,6 +35,15 @@ class Profile (AbstractUser, DateModels):
             'unique': 'Error, already registred'
         }
     )
+
+    # Negotiations choices
+    STATUS_CHOICE = [
+        (0, 'Unselected'),
+        (1, 'Buyer'),
+        (2, 'Seller'),    
+    ]
+
+    type_user = models.IntegerField(choices=STATUS_CHOICE, default=0)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']

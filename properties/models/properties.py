@@ -1,3 +1,5 @@
+""" Property model"""
+
 import uuid
 
 # Django
@@ -8,6 +10,7 @@ from locations.models.countries import Neighborhoods
 
 # Utils
 from utils.models import DateModels
+
 
 class Property(models.Model):
     """Properties model"""
