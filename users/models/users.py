@@ -36,7 +36,8 @@ class Profile (AbstractUser, DateModels):
         }
     )
 
-    # Negotiations choices
+    """ Negotiations choices """
+    
     STATUS_CHOICE = [
         (0, 'Unselected'),
         (1, 'Buyer'),
