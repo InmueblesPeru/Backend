@@ -14,18 +14,18 @@ class Negotiation(models.Model):
     '''Negotiation Model'''
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    id_user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    id_profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     id_property = models.ForeignKey(Property, on_delete=models.CASCADE)
-    # status = models.Choices(
-    #     (1 , 'Freshman'),
-    #     (1 , 'Sophomore'),
-    # )
 
-    # Class Status(models.IntegerChoices):
-    #     '''Status Choice'''
+    # Negotiations choices
+    NO_NEGOTIATION = 0
+    OPEN_NEGOTIATION = 1
+    CLOSE_NEGOTIATION = 2
+    
+    STATUS_CHOICE = [
+        (NO_NEGOTIATION, 'No Negotiation'),
+        (OPEN_NEGOTIATION, 'Open Negotiation'),
+        (CLOSE_NEGOTIATION, 'Close Negotiation'),    
+    ]
 
-    #     NO_NEGOTIATION = 0
-    #     OPEN_NEGOTIATION = 1
-    #     CLOSE_NEGOTIATION = 2
-
-    # status = models.IntegerField(choices=Status.choices)
+    status = models.CharField(max_length=50, choices=STATUS_CHOICE, default=NO_NEGOTIATION,)
