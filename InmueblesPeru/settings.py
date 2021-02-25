@@ -14,7 +14,7 @@ from pathlib import Path
 
 import environ
 
-#Initialize environment variables
+# Initialize environment variables
 env = environ.Env()
 environ.Env.read_env()
 
@@ -52,8 +52,6 @@ LOCAL_APPS = [
     'properties.apps.PropertiesConfig',
     'locations.apps.LocationsConfig',
     'negotiations.apps.NegotiationsConfig',
-    'api.apps.ApiConfig',
-    
 ]
 
 THIRD_PARTY_APPS = [
