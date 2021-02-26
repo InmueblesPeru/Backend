@@ -28,8 +28,7 @@ class UserLoginSerializer(serializers.Serializer):
         return data
 
     def create(self, data):
-        """Generate or retrive new token"""
+        """generate or retrive a new token"""
 
-        token, created = Token.objects
-
+        token, created = Token.objects.get_or_create(user=self.context['user'])
         return self.context['user'], token.key

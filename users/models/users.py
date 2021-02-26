@@ -25,8 +25,6 @@ class Profile (AbstractUser, DateModels):
     first_name = models.CharField(max_length=20, blank=False)
     last_name = models.CharField(max_length=20, blank=False)
     phone_number = models.CharField(validators=[phone_regex], max_length=17)
-    
-    
 
     email = models.EmailField(
         'email address',
