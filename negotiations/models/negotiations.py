@@ -20,9 +20,9 @@ class Negotiation(models.Model):
     """ Negotiations choices """
     
     STATUS_CHOICE = [
-        (0, 'NO_NEGOTIATION'),
-        (1, 'OPEN_NEGOTIATION'),
-        (2, 'CLOSE_NEGOTIATION'),    
+        (0, 'No Negotiation'),
+        (1, 'Open Negotiation'),
+        (2, 'Close Negotiation'),    
     ]
 
     type_user = models.IntegerField(choices=STATUS_CHOICE, default=0)
