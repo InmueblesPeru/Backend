@@ -1,4 +1,4 @@
-"""users serializers"""
+"""Profile serializers"""
 
 # Django
 from django.contrib.auth import authenticate
@@ -7,9 +7,29 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
+# Models
+from users.models.users import Profile
 
-class UserLoginSerializer(serializers.Serializer):
-    """User login serializer"""
+
+class ProfileModelSerializer(serializers.ModelSerializer):
+    """Profile model serializer"""
+    class Meta:
+        """Meta class"""
+
+        model = Profile
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'phone_number'
+        )
+
+
+
+
+class ProfileLoginSerializer(serializers.Serializer):
+    """Profile login serializer"""
 
     email = serializers.EmailField()
     password = serializers.CharField(

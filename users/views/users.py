@@ -6,20 +6,23 @@ from rest_framework import status
 from rest_framework.response import Response
 
 # Serializers
-from users.serializers import UserLoginSerializer
+from users.serializers import (
+    ProfileLoginSerializer,
+    ProfileModelSerializer
+)
 
 
-class UserLoginApiView(APIView):
+class ProfileLoginApiView(APIView):
     """User login API view"""
 
     def post(self, request, *args, **kwargs):
-        serializer = UserLoginSerializer(data=request.data)
+        serializer = ProfileLoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        token = serializer.save()
+        user, token = serializer.save()
 
         data = {
-            'status': 'ok',
-            'token': token
+            'user': ProfileModelSerializer(user).data,
+            'access_token': token
         }
 
         return Response(data, status=status.HTTP_201_CREATED)
