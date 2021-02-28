@@ -33,7 +33,7 @@ class ProfileSignUpView(APIView):
     """User Sign Up API view"""
 
     def post(self, request, *args, **kwargs):
-        serializer = ProfileSingUpSerializer(data=request.data)
+        serializer = ProfileSignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
         data = ProfileModelSerializer(user).data

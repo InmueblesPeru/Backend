@@ -94,6 +94,6 @@ class ProfileSignUpSerializer(serializers.Serializer):
         """Handle Profile Creation"""
 
         data.pop('password_confirmation')
-        profile = Profile.objects.create_user(**data)
-        return profile
+        user = Profile.objects.create_user(**data)
+        return user
 
