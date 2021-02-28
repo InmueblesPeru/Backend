@@ -14,7 +14,7 @@ from pathlib import Path
 
 import environ
 
-#Initialize environment variables
+# Initialize environment variables
 env = environ.Env()
 environ.Env.read_env()
 
@@ -50,16 +50,20 @@ LOCAL_APPS = [
     # local apps
     'users.apps.UsersConfig',
     'properties.apps.PropertiesConfig',
-    'api.apps.ApiConfig',
-    
+    'locations.apps.LocationsConfig',
+    'negotiations.apps.NegotiationsConfig',
 ]
 
 THIRD_PARTY_APPS = [
     # Third party apps
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
+# users y autentication
+AUTH_USER_MODEL = 'users.Profile'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
