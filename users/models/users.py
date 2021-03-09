@@ -30,7 +30,7 @@ class Profile (AbstractUser, DateModels):
         'email address',
         unique=True,
         error_messages={
-            'unique': 'Error, already registred'
+            'unique': 'Error, already registered'
         }
     )
 

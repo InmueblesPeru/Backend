@@ -62,7 +62,7 @@ THIRD_PARTY_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
-# users y autentication
+# users and authentication
 AUTH_USER_MODEL = 'users.Profile'
 
 MIDDLEWARE = [

@@ -1,4 +1,4 @@
-# Rest_framwork
+# Rest_framework
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -10,10 +10,10 @@ from properties.serializers.properties import PropertyModelSerializer
 
 
 class ListProperties(APIView):
-    '''View to list all properties in the system'''
+    """View to list all properties in the system"""
 
     def get(self, request, format=None):
-        '''Return a list of all properties'''
+        """Return a list of all properties"""
         properties = Property.objects.all()
         serializer = PropertyModelSerializer(properties, many=True)
 

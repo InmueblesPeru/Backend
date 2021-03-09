@@ -1,4 +1,4 @@
-'''Profile serializers'''
+"""Profile serializers"""
 
 # Rest framework
 from rest_framework import serializers
@@ -8,11 +8,11 @@ from properties.models.properties import Property
 
 
 class PropertyModelSerializer(serializers.ModelSerializer):
-    '''Property model serializer'''
+    """Property model serializer"""
     neighborhoods = serializers.StringRelatedField()
 
     class Meta:
-        '''Meta class'''
+        """Meta class"""
 
         model = Property
         fields = '__all__'

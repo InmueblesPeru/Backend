@@ -1,12 +1,13 @@
-'''Countries, States, Cities and Neighborhoods modesl'''
+"""Countries, States, Cities and Neighborhoods models"""
 
 import uuid
 
-#Django
+# Django
 from django.db import models
 
+
 class Countries(models.Model):
-    '''countries Model'''
+    """countries Model"""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=20, null=False, blank=False)
@@ -16,7 +17,7 @@ class Countries(models.Model):
 
 
 class States(models.Model):
-    '''States Model'''
+    """States Model"""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=20, null=False, blank=False)
@@ -27,7 +28,7 @@ class States(models.Model):
 
 
 class Cities(models.Model):
-    '''Cities Model'''
+    """Cities Model"""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=20, null=False, blank=False)
@@ -38,7 +39,7 @@ class Cities(models.Model):
 
 
 class Neighborhoods(models.Model):
-    '''Neighborhoods Model'''
+    """Neighborhoods Model"""
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -46,6 +47,3 @@ class Neighborhoods(models.Model):
 
     def __str__(self):
         return f'{self.name}, {self.city_id}'
-
-
-    
