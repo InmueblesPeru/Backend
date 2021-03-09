@@ -39,3 +39,12 @@ class ProfileSignUpView(APIView):
         data = ProfileModelSerializer(user).data
 
         return Response(data, status=status.HTTP_201_CREATED)
+
+
+class ProfileView(APIView):
+
+    def get(self, request, *args, **kwargs):
+        pass
+
+    def put(self, request, *args, **kwargs):
+        pass

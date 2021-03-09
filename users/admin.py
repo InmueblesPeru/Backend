@@ -6,6 +6,7 @@ from django.contrib.auth.admin import UserAdmin
 # Models
 from users.models.users import Profile
 
+
 @admin.register(Profile)
 class ProfileAdmin(UserAdmin):
 
