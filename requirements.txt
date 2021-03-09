@@ -21,3 +21,6 @@ requests-toolbelt==0.9.1
 sqlparse==0.4.1
 urllib3==1.26.3
 whitenoise==5.2.0
+Pillow==8.0.1
+psycopg2-binary
+4eabaececc20edf145355e65a3be18ac030f3de4
