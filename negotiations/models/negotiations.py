@@ -13,7 +13,6 @@ from properties.models.properties import Property
 class Negotiation(models.Model):
     """Negotiation Model"""
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     id_profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     id_property = models.ForeignKey(Property, on_delete=models.CASCADE)
 

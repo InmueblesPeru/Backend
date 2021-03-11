@@ -11,7 +11,7 @@ from users.views import (
 )
 
 urlpatterns = [
-    path('users/login/', ProfileLoginApiView.as_view(), name='login'),
-    path('users/signup/', ProfileSignUpView.as_view(), name='signup'),
-    path('users/profile/', ProfileView.as_view(), name='profile'),
+    path('api/v1/users/login/', ProfileLoginApiView.as_view(), name='login'),
+    path('api/v1/users/signup/', ProfileSignUpView.as_view(), name='signup'),
+    path('api/v1/users/profile/', ProfileView.as_view(), name='profile'),
 ]

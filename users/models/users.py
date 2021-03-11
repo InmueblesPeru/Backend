@@ -21,7 +21,6 @@ class Profile (AbstractUser, DateModels):
         regex=r'\+?1?\d{9,15}$',
     )
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField(max_length=20, blank=False)
     last_name = models.CharField(max_length=20, blank=False)
     phone_number = models.CharField(validators=[phone_regex], max_length=17)

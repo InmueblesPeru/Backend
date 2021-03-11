@@ -14,8 +14,7 @@ from utils.models import DateModels
 
 class Property(models.Model):
     """Properties model"""
-    
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
     neighborhood = models.ForeignKey(Neighborhoods, on_delete=models.CASCADE)
     number_rooms = models.PositiveIntegerField(default=0)
     number_bathrooms = models.PositiveIntegerField(default=0)
