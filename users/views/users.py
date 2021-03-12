@@ -5,6 +5,9 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+# Models
+from users.models.users import Profile
+
 # Serializers
 from users.serializers import (
     ProfileLoginSerializer,
