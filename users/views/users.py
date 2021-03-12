@@ -1,5 +1,8 @@
 """users views"""
 
+# Django
+from django.http import Http404
+
 # Django REST Framework
 from rest_framework import status
 from rest_framework.views import APIView
@@ -46,8 +49,19 @@ class ProfileSignUpView(APIView):
 
 class ProfileView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        pass
+    """................."""
 
-    def put(self, request, *args, **kwargs):
-        pass
+    def get(self, request):
+        """Return a list of all properties"""
+
+        if request.data.get('id'):
+            try:
+                profiles = Profile.objects.get(pk=self.request.data.get('id'))
+            except Profile.DoesNotExist:
+                raise Http404
+            serializer = ProfileModelSerializer(profiles)
+        else:
+            properties = Profile.objects.all()
+            serializer = ProfileModelSerializer(properties, many=True)
+
+        return Response(serializer.data)
